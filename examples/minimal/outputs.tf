@@ -1,8 +1,15 @@
-output "null_resource_id" {
-  value       = "${module.minimal.null_resource_id}"
-  description = "An arbitrary value that changes each time the resource is replaced."
+
+output "databricks-module" {
+  value       = module.databricks
+  description = "All the resources created by the databricks module"
 }
-output "example_value" {
-  value       = "${module.minimal.example_value}"
-  description = "Example variable."
+
+output "databricks-vnet-id" {
+  value       = azurerm_virtual_network.databricks-vnet.id
+  description = "The virtual network created for databricks"
+}
+
+output "databricks-resource-group-id" {
+  value       = azurerm_resource_group.databricks-rg.id
+  description = "The resource group created for databricks"
 }

@@ -12,7 +12,7 @@ This terraform module creates a Databricks workspace in Azure.
 main.tf:
 ```
 module "databricks_module" {
-  source = "https://github.com/Datatamer/terraform-azure-databricks.git?ref=0.1.0"
+  source = "https://github.com/Datatamer/terraform-azure-databricks.git?ref=0.2.0"
 
   name = "databricks-example"
   resource_group_name = "demoGroup"
@@ -25,10 +25,8 @@ module "databricks_module" {
 ```
 
 ## Minimal
-TO BE UPDATED
-
 Smallest complete fully working example. This example might require extra resources to run the example.
-- [Minimal](https://github.com/Datatamer/terraform-template-repo/tree/master/examples/minimal)
+- [Minimal](https://github.com/Datatamer/terraform-azure-databricks/tree/master/examples/minimal)
 
 # Resources Created
 This modules creates:

@@ -1,3 +1,4 @@
+
 resource "azurerm_databricks_workspace" "module-databricks" {
   name                = var.name
   resource_group_name = var.resource_group_name
@@ -24,9 +25,7 @@ resource "azurerm_subnet" "private-subnet" {
   resource_group_name = var.virtual_network_rg_name
   virtual_network_name = var.virtual_network_name
 
-  address_prefix = var.private_subnet_address_prefix
-
-  network_security_group_id = azurerm_network_security_group.databricks-subnet-sg.id
+  address_prefixes = [var.private_subnet_address_prefix]
 
   service_endpoints = [
     "Microsoft.AzureActiveDirectory",
@@ -42,14 +41,17 @@ resource "azurerm_subnet" "private-subnet" {
   }
 }
 
+resource "azurerm_subnet_network_security_group_association" "private-subnet-sg-association" {
+  subnet_id                 = azurerm_subnet.private-subnet.id
+  network_security_group_id = azurerm_network_security_group.databricks-subnet-sg.id
+}
+
 resource "azurerm_subnet" "public-subnet" {
   name = "${var.name}-public-subnet"
   resource_group_name = var.virtual_network_rg_name
   virtual_network_name = var.virtual_network_name
 
-  address_prefix = var.public_subnet_address_prefix
-
-  network_security_group_id = azurerm_network_security_group.databricks-subnet-sg.id
+  address_prefixes = [var.public_subnet_address_prefix]
 
   service_endpoints = [
     "Microsoft.AzureActiveDirectory",
@@ -63,6 +65,11 @@ resource "azurerm_subnet" "public-subnet" {
       name = "Microsoft.Databricks/workspaces"
     }
   }
+}
+
+resource "azurerm_subnet_network_security_group_association" "public-subnet-sg-association" {
+  subnet_id                 = azurerm_subnet.public-subnet.id
+  network_security_group_id = azurerm_network_security_group.databricks-subnet-sg.id
 }
 
 resource "azurerm_network_security_group" "databricks-subnet-sg" {
