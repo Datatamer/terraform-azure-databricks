@@ -34,28 +34,47 @@ This modules creates:
 * 2 subnets
 * 1 security group
 
-# Variables 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
+
 ## Inputs
-* `name`: Name of Databricks workspace
-* `resource_group_name`: Name of resource group into which Databricks will be deployed
-* `location`: Location in which Databricks will be deployed
-* `virtual_network_name`: Name of EXISTING virtual network into which Databricks will be deployed
-* `virtual_network_rg_name`: Name of resource group which contiains the virtual network
-* `private_subnet_address_prefix`: Address space of the private subnet
-* `public_subnet_address_prefix`: Address space of the public subnet
-* `tags`: (Optional) Map of tags to attach to the Databricks workspace
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| location | Location in which Databricks will be deployed | `string` | n/a | yes |
+| name | Name of Databricks workspace | `string` | n/a | yes |
+| private\_subnet\_address\_prefix | Address space for private Databricks subnet | `string` | n/a | yes |
+| public\_subnet\_address\_prefix | Address space for public Databricks subnet | `string` | n/a | yes |
+| resource\_group\_name | Name of resource group into which Databricks will be deployed | `string` | n/a | yes |
+| virtual\_network\_name | Name of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
+| virtual\_network\_rg\_name | Name of resource group which contiains the virtual network | `string` | n/a | yes |
+| tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 
 ## Outputs
-* `workspace_name`: Name of Databricks workspace
-* `private_subnet_name`: Name of private subnet
-* `private_subnet_id`: ID of private subnet
-* `private_subnet_prefix`: Address space of private subnet
-* `public_subnet_name`: Name of public subnet
-* `public_subnet_id`: ID of public subnet
-* `public_subnet_prefix`: Address space of public subnet
-* `security_group_name`: Name of security group assigned to subnets
-* `security_group_id`: ID of security group assigned to subnets
 
+| Name | Description |
+|------|-------------|
+| private\_subnet\_id | ID of private subnet |
+| private\_subnet\_name | Name of private subnet |
+| private\_subnet\_prefix | Address space of private subnet |
+| public\_subnet\_id | ID of public subnet |
+| public\_subnet\_name | Name of public subnet |
+| public\_subnet\_prefix | Address space of public subnet |
+| security\_group\_id | ID of security group assigned to subnets |
+| security\_group\_name | Name of security group assigned to subnets |
+| workspace\_name | Name of Databricks workspace |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # References
 This repo is based on:
@@ -67,7 +86,7 @@ This repo is based on:
 * Azure Databricks Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/databricks_workspace.html
 * Azure Security Group Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/network_security_group.html
 * Azure Subnet Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/subnet.html
- 
+
 # Development
 ## Releasing new versions
 * Update version contained in `VERSION`
