@@ -16,15 +16,15 @@ variable "virtual_network_name" {
 }
 variable "virtual_network_rg_name" {
   type        = string
-  description = "Name of resource group which contiains the virtual network"
+  description = "Name of resource group which contiains the virtual network and subnets"
 }
-variable "private_subnet_address_prefix" {
+variable "private_subnet_name" {
   type        = string
-  description = "Address space for private Databricks subnet"
+  description = "Name of the private subnet"
 }
-variable "public_subnet_address_prefix" {
+variable "public_subnet_name" {
   type        = string
-  description = "Address space for public Databricks subnet"
+  description = "Name of the public subnet"
 }
 variable "tags" {
   type        = map(string)
