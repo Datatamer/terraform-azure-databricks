@@ -4,6 +4,11 @@ output "databricks-module" {
   description = "All the resources created by the databricks module"
 }
 
+output "subnet-module" {
+  value       = module.subnets
+  description = "All the resources created by the databricks module"
+}
+
 output "databricks-vnet-id" {
   value       = azurerm_virtual_network.databricks-vnet.id
   description = "The virtual network created for databricks"

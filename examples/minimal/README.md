@@ -22,5 +22,6 @@ No input.
 | databricks-module | All the resources created by the databricks module |
 | databricks-resource-group-id | The resource group created for databricks |
 | databricks-vnet-id | The virtual network created for databricks |
+| subnet-module | All the resources created by the databricks module |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "databricks-rg" {
-  name = "tamrDatabricksResourceGroup"
+  name     = "tamrDatabricksResourceGroup"
   location = "East US"
 }
 
@@ -15,14 +15,24 @@ resource "azurerm_virtual_network" "databricks-vnet" {
 
 
 module "databricks" {
-  source = "git@github.com:Datatamer/terraform-azure-databricks.git"
-  name = "tamr-databricks"
-  resource_group_name = azurerm_resource_group.databricks-rg.name
-  location = azurerm_resource_group.databricks-rg.location
-  virtual_network_name = azurerm_virtual_network.databricks-vnet.name
+  //source = "git@github.com:Datatamer/terraform-azure-databricks.git"
+  source                  = "../../"
+  name                    = "tamr-databricks"
+  resource_group_name     = azurerm_resource_group.databricks-rg.name
+  location                = azurerm_resource_group.databricks-rg.location
+  virtual_network_name    = azurerm_virtual_network.databricks-vnet.name
   virtual_network_rg_name = azurerm_resource_group.databricks-rg.name
 
-  private_subnet_address_prefix = "1.2.3.0/26"
-  public_subnet_address_prefix = "1.2.3.64/26"
+  private_subnet_name = module.subnets.private_subnet_name
+  public_subnet_name  = module.subnets.public_subnet_name
+}
 
+module "subnets" {
+  //source = "https://github.com/Datatamer/terraform-azure-databricks.git/modules/azure-databricks-subnets"
+  source                          = "../../modules/azure-databricks-subnets/"
+  subnet_name_prefix              = "tamr-databricks-example"
+  virtual_network_name            = azurerm_virtual_network.databricks-vnet.name
+  virtual_network_rg_name         = azurerm_resource_group.databricks-rg.name
+  private_subnet_address_prefixes = ["1.2.3.0/26"]
+  public_subnet_address_prefixes  = ["1.2.3.64/26"]
 }
