@@ -1,6 +1,10 @@
 output "workspace_name" {
-  value       = azurerm_databricks_workspace.module-databricks.name
-  description = "Name of Databricks workspace"
+  value       = module.databricks-workspace.workspace_name
+  description = "Name of the Databricks workspace"
+}
+output "workspace_id" {
+  value       = module.databricks-workspace.workspace_id
+  description = "ID of the Databricks workspace"
 }
 output "security_group_private_name" {
   value       = module.security-groups.security_group_private_name
