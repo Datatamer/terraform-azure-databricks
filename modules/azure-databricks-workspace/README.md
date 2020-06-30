@@ -35,9 +35,7 @@ This modules creates:
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 0.12 |
+No requirements.
 
 ## Providers
 
@@ -62,11 +60,8 @@ This modules creates:
 
 | Name | Description |
 |------|-------------|
-| security\_group\_private\_id | ID of security group assigned to the private subnet |
-| security\_group\_private\_name | Name of security group assigned to the private subnet |
-| security\_group\_public\_id | ID of security group assigned to the public subnet |
-| security\_group\_public\_name | Name of security group assigned to the public subnet |
-| workspace\_name | Name of Databricks workspace |
+| workspace\_id | ID of the Databricks workspace |
+| workspace\_name | Name of the Databricks workspace |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

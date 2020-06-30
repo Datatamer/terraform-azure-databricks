@@ -1,4 +1,4 @@
-  // Retrieve the data references to the existing subnets
+// Retrieve the data references to the existing subnets
 data "azurerm_subnet" "private-subnet" {
   name                 = var.private_subnet_name
   virtual_network_name = var.virtual_network_name
