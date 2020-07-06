@@ -1,3 +1,9 @@
+# Tamr Azure Databricks module - v0.4.0 - June 4th 2020
+* Moves the creation of security groups into its own module
+* Creates 2 separate security groups for the private/public subnets
+* Moves the creation of the databricks workspace into its own module
+* Documentation cleanup
+
 # Tamr Azure Databricks module - v0.3.0 - June 3rd 2020
 * Moves the creation of subnets into its own module
 

@@ -3,7 +3,7 @@
 This terraform module creates a Databricks workspace in Azure.
 
 ## Assumptions
-* An Azure virtual network exists that the Databricks workspace and associated subnets will be injected into.
+* An Azure virtual, subnets, and security groups exist
 
 # Examples
 ## Basic
@@ -31,18 +31,17 @@ Smallest complete working example. This example might require extra resources to
 # Resources Created
 This modules creates:
 * 1 Databricks workspace
-* 2 security groups
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 0.12 |
+No requirements.
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
 
 ## Inputs
 
@@ -61,10 +60,6 @@ No provider.
 
 | Name | Description |
 |------|-------------|
-| security\_group\_private\_id | ID of security group assigned to the private subnet |
-| security\_group\_private\_name | Name of security group assigned to the private subnet |
-| security\_group\_public\_id | ID of security group assigned to the public subnet |
-| security\_group\_public\_name | Name of security group assigned to the public subnet |
 | workspace\_id | ID of the Databricks workspace |
 | workspace\_name | Name of the Databricks workspace |
 

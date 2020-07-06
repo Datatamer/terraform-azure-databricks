@@ -9,8 +9,8 @@ This terraform module creates subnets for the Databricks workspace in Azure.
 
 main.tf:
 ```
-module "databricks_module" {
-  source = "https://github.com/Datatamer/terraform-azure-databricks.git/modules/azure-databricks-subnets?ref=0.3.0"
+module "databricks_subnets_module" {
+  source = "https://github.com/Datatamer/terraform-azure-databricks.git/modules/azure-databricks-subnets?ref=0.4.0"
 
   subnet_name_prefix = "databricks-example"
   resource_group_name = "demoGroup"
@@ -66,22 +66,3 @@ This modules creates:
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-# References
-This repo is based on:
-* [terraform standard module structure](https://www.terraform.io/docs/modules/index.html#standard-module-structure)
-* [templated terraform module](https://github.com/tmknom/template-terraform-module)
-
-## Reference documents:
-* Azure Databricks: https://docs.microsoft.com/en-us/azure/azure-databricks/
-* Azure Databricks Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/databricks_workspace.html
-* Azure Security Group Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/network_security_group.html
-* Azure Subnet Terraform Docs: https://www.terraform.io/docs/providers/azurerm/r/subnet.html
-
-# Development
-## Releasing new versions
-* Update version contained in `VERSION`
-* Document changes in `CHANGELOG.md`
-* Create a tag in github for the commit associated with the version
-
-# License
-Apache 2 Licensed. See LICENSE for full details.
