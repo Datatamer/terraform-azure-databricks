@@ -25,6 +25,9 @@ override.tf.json
 #
 # !example_override.tf
 
+# Ignore terratest configuration
+terratest.tf.json
+
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
@@ -32,3 +35,5 @@ override.tf.json
 .idea/
 *.iml
 
+# Ignore makefile
+ops-makefile
