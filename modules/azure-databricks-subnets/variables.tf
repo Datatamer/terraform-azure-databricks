@@ -27,7 +27,11 @@ variable "tags" {
   default     = {}
 }
 variable "service_delegation_actions" {
-  default     = []
+  default = [
+    "Microsoft.Network/virtualNetworks/subnets/join/action",
+    "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",
+    "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action",
+  ]
   type        = list(string)
   description = <<EOF
   A list of Actions which should be delegated.
