@@ -11,7 +11,7 @@ variable "virtual_network_name" {
 }
 variable "virtual_network_rg_name" {
   type        = string
-  description = "Name of resource group which contiains the virtual network"
+  description = "Name of resource group which contains the virtual network"
 }
 variable "private_subnet_address_prefixes" {
   type        = list(string)
