@@ -26,3 +26,11 @@ variable "tags" {
   description = "Map of tags to attach to Databricks workspace"
   default     = {}
 }
+variable "service_delegation_actions" {
+  default     = []
+  type        = list(string)
+  description = <<EOF
+  A list of Actions which should be delegated.
+  This list is specific to the service to delegate to.
+  EOF
+}
