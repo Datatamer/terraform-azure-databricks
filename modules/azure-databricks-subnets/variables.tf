@@ -11,7 +11,7 @@ variable "virtual_network_name" {
 }
 variable "virtual_network_rg_name" {
   type        = string
-  description = "Name of resource group which contiains the virtual network"
+  description = "Name of resource group which contains the virtual network"
 }
 variable "private_subnet_address_prefixes" {
   type        = list(string)
@@ -25,4 +25,16 @@ variable "tags" {
   type        = map(string)
   description = "Map of tags to attach to Databricks workspace"
   default     = {}
+}
+variable "service_delegation_actions" {
+  default = [
+    "Microsoft.Network/virtualNetworks/subnets/join/action",
+    "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",
+    "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action",
+  ]
+  type        = list(string)
+  description = <<EOF
+  A list of Actions which should be delegated.
+  This list is specific to the service to delegate to.
+  EOF
 }
