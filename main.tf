@@ -4,8 +4,7 @@ module "databricks-workspace" {
   name                    = var.name
   resource_group_name     = var.resource_group_name
   location                = var.location
-  virtual_network_name    = var.virtual_network_name
-  virtual_network_rg_name = var.virtual_network_rg_name
+  virtual_network_id      = var.virtual_network_id
   private_subnet_name     = var.private_subnet_name
   public_subnet_name      = var.public_subnet_name
   tags                    = var.tags
@@ -18,7 +17,7 @@ module "security-groups" {
   location                   = var.location
   virtual_network_name       = var.virtual_network_name
   virtual_network_rg_name    = var.virtual_network_rg_name
-  private_subnet_name        = var.private_subnet_name
-  public_subnet_name         = var.public_subnet_name
+  private_subnet_id          = var.private_subnet_id
+  public_subnet_id           = var.public_subnet_id
   tags                       = var.tags
 }

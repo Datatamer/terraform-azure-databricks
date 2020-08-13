@@ -1,9 +1,3 @@
-
-data "azurerm_virtual_network" "parent" {
-  name                = var.virtual_network_name
-  resource_group_name = var.virtual_network_rg_name
-}
-
 resource "azurerm_subnet" "private-subnet" {
   name                 = "${var.subnet_name_prefix}-private-subnet"
   resource_group_name  = var.virtual_network_rg_name
