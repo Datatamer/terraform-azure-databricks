@@ -21,12 +21,13 @@ module "databricks" {
   resource_group_name     = azurerm_resource_group.databricks-rg.name
   location                = azurerm_resource_group.databricks-rg.location
 
-  virtual_network_name    = azurerm_virtual_network.databricks-vnet.name
   virtual_network_id      = azurerm_virtual_network.databricks-vnet.id
   virtual_network_rg_name = azurerm_resource_group.databricks-rg.name
 
   private_subnet_name = module.subnets.private_subnet_name
+  private_subnet_id   = module.subnets.private_subnet_id
   public_subnet_name  = module.subnets.public_subnet_name
+  public_subnet_id    = module.subnets.public_subnet_id
 }
 
 module "subnets" {
