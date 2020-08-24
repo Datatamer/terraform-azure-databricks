@@ -1,5 +1,9 @@
 # Tamr Azure Databricks module
 
+# v0.4.2 - August 4th 2020
+* Remove data blocks that attach to subnets during runtime
+* Add required variables `private_subnet_id` and `public_subnet_id`
+
 # v0.4.1 - August 4th 2020
 * Adds a new variable to set delegation actions in the subnets module
 * Minor documentation cleanup
