@@ -16,12 +16,12 @@ variable "virtual_network_rg_name" {
 
 variable "private_subnet_id" {
   type        = string
-  description = "Name of the private subnet"
+  description = "ID of the private subnet"
 }
 
 variable "public_subnet_id" {
   type        = string
-  description = "Name of the public subnet"
+  description = "ID of the public subnet"
 }
 
 variable "tags" {
