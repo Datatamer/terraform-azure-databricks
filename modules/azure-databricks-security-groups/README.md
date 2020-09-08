@@ -49,9 +49,8 @@ This modules creates:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | location | Location in which Databricks will be deployed | `string` | n/a | yes |
-| private\_subnet\_name | Name of the private subnet | `string` | n/a | yes |
-| public\_subnet\_name | Name of the public subnet | `string` | n/a | yes |
-| virtual\_network\_name | Name of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
+| private\_subnet\_id | ID of the private subnet | `string` | n/a | yes |
+| public\_subnet\_id | ID of the public subnet | `string` | n/a | yes |
 | virtual\_network\_rg\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
 | security-group-name-prefix | Prefix for the names of the security groups created by this module | `string` | `"tamr-databricks"` | no |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
