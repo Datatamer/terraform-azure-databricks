@@ -1,6 +1,6 @@
 # Tamr Azure Databricks module
 
-# v0.4.2 - August 24th 2020
+# v0.4.2 - September 8th 2020
 * Remove data blocks that attach to subnets during runtime
 * Add required variables `private_subnet_id` and `public_subnet_id`
 
