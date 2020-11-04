@@ -1,4 +1,4 @@
-variable "security-group-name-prefix" {
+variable "security_group_name_prefix" {
   type        = string
   description = "Prefix for the names of the security groups created by this module"
   default     = "tamr-databricks"

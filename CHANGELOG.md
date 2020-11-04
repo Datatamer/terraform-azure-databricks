@@ -2,6 +2,7 @@
 
 # v0.5.0 - November 4th 2020
 * Changes input variable `name` to `workspace_name` for clarity
+* Changes input variable `security-group-name-prefix` to `security_group_name_prefix` for naming consistency
 
 # v0.4.2 - September 8th 2020
 * Remove data blocks that attach to subnets during runtime
