@@ -1,4 +1,4 @@
-variable "name" {
+variable "workspace_name" {
   type        = string
   description = "Name of Databricks workspace"
 }
@@ -33,4 +33,3 @@ variable "tags" {
   description = "Map of tags to attach to Databricks workspace"
   default     = {}
 }
-

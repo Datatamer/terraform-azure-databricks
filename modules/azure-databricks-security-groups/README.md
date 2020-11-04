@@ -65,4 +65,3 @@ This modules creates:
 | security\_group\_public\_name | Name of security group assigned to the public subnet |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-

@@ -1,5 +1,8 @@
 # Tamr Azure Databricks module
 
+# v0.5.0 - November 4th 2020
+* Changes input variable `name` to `workspace_name` for clarity
+
 # v0.4.2 - September 8th 2020
 * Remove data blocks that attach to subnets during runtime
 * Add required variables `private_subnet_id` and `public_subnet_id`

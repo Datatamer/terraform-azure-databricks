@@ -1,6 +1,6 @@
 // Create the databricks workspace
 resource "azurerm_databricks_workspace" "module-databricks" {
-  name                = var.name
+  name                = var.workspace_name
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = "standard"
