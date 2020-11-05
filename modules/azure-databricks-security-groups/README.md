@@ -16,7 +16,7 @@ module "databricks_sg_module" {
 
   security_group_name_prefix = "tamr-databricks-"
   location                   = "eastus2"
-  virtual_network_rg_name    = "rg"
+  vnet_resource_group_name   = "rg"
   private_subnet_name        = "databricks-private-subnet"
   public_subnet_name         = "databricks-public-subnet"
 }
