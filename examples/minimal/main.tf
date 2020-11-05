@@ -31,7 +31,7 @@ module "databricks" {
 }
 
 module "subnets" {
-  //source = "https://github.com/Datatamer/terraform-azure-databricks.git/modules/azure-databricks-subnets"
+  //source = "git@github.com:Datatamer/terraform-azure-databricks.git//modules/azure-databricks-subnets"
   source             = "../../modules/azure-databricks-subnets/"
   subnet_name_prefix = "tamr-databricks-example"
 
