@@ -12,12 +12,11 @@ This terraform module creates security groups for databricks subnets
 main.tf:
 ```
 module "databricks_sg_module" {
-  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-security-groups?ref=0.4.1"
+  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-security-groups?ref=0.5.0"
 
-  security-group-name-prefix = "tamr-databricks-"
+  security_group_name_prefix = "tamr-databricks-"
   location                   = "eastus2"
-  virtual_network_name       = "vnet"
-  virtual_network_rg_name    = "rg"
+  vnet_resource_group_name   = "rg"
   private_subnet_name        = "databricks-private-subnet"
   public_subnet_name         = "databricks-public-subnet"
 }
@@ -51,8 +50,8 @@ This modules creates:
 | location | Location in which Databricks will be deployed | `string` | n/a | yes |
 | private\_subnet\_id | ID of the private subnet | `string` | n/a | yes |
 | public\_subnet\_id | ID of the public subnet | `string` | n/a | yes |
-| virtual\_network\_rg\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
-| security-group-name-prefix | Prefix for the names of the security groups created by this module | `string` | `"tamr-databricks"` | no |
+| vnet\_resource\_group\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
+| security\_group\_name\_prefix | Prefix for the names of the security groups created by this module | `string` | `"tamr-databricks"` | no |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 
 ## Outputs
@@ -65,4 +64,3 @@ This modules creates:
 | security\_group\_public\_name | Name of security group assigned to the public subnet |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-

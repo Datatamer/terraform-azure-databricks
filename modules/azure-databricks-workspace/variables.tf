@@ -1,4 +1,4 @@
-variable "name" {
+variable "workspace_name" {
   type        = string
   description = "Name of Databricks workspace"
 }
@@ -13,7 +13,7 @@ variable "location" {
   description = "Location in which Databricks will be deployed"
 }
 
-variable "virtual_network_id" {
+variable "vnet_id" {
   type        = string
   description = "ID of existing virtual network into which Databricks will be deployed"
 }
@@ -33,4 +33,3 @@ variable "tags" {
   description = "Map of tags to attach to Databricks workspace"
   default     = {}
 }
-

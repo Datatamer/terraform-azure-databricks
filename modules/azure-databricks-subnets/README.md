@@ -10,12 +10,12 @@ This terraform module creates subnets for the Databricks workspace in Azure.
 main.tf:
 ```
 module "databricks_subnets_module" {
-  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-subnets?ref=0.4.1"
+  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-subnets?ref=0.5.0"
 
   subnet_name_prefix = "databricks-example"
   resource_group_name = "demoGroup"
-  virtual_network_id = "vnet-id"
-  virtual_network_rg_name = "groupName"
+  vnet_id = "vnet-id"
+  vnet_resource_group_name = "groupName"
   private_subnet_address_prefixes = ["1.2.3.0/26"]
   public_subnet_address_prefixes = ["1.2.3.64/26"]
 }
@@ -48,10 +48,9 @@ This modules creates:
 |------|-------------|------|---------|:--------:|
 | private\_subnet\_address\_prefixes | Address space for private Databricks subnet | `list(string)` | n/a | yes |
 | public\_subnet\_address\_prefixes | Address space for public Databricks subnet | `list(string)` | n/a | yes |
-| virtual\_network\_name | Name of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
-| virtual\_network\_rg\_name | Name of resource group which contains the virtual network | `string` | n/a | yes |
-| service\_delegation\_actions | A list of Actions which should be delegated.  
-<br>  This list is specific to the service to delegate to. | `list(string)` | <pre>[<br>  "Microsoft.Network/virtualNetworks/subnets/join/action",<br>  "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",<br>  "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action"<br>]</pre> | no |
+| vnet\_name | Name of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
+| vnet\_resource\_group\_name | Name of resource group which contains the virtual network | `string` | n/a | yes |
+| service\_delegation\_actions | A list of Actions which should be delegated.<br>  This list is specific to the service to delegate to. | `list(string)` | <pre>[<br>  "Microsoft.Network/virtualNetworks/subnets/join/action",<br>  "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",<br>  "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action"<br>]</pre> | no |
 | subnet\_name\_prefix | Prefix for the names of the resources created by this module | `string` | `"tamr-databricks"` | no |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 
@@ -67,4 +66,3 @@ This modules creates:
 | public\_subnet\_prefix | Address space of public subnet |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-

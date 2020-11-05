@@ -24,6 +24,7 @@ This modules creates:
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12 |
+| azurerm | >= 2.11.0 |
 
 ## Providers
 
@@ -34,14 +35,14 @@ No provider.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | location | Location in which Databricks will be deployed | `string` | n/a | yes |
-| name | Name of Databricks workspace | `string` | n/a | yes |
 | private\_subnet\_id | ID of the private subnet | `string` | n/a | yes |
 | private\_subnet\_name | Name of the private subnet | `string` | n/a | yes |
 | public\_subnet\_id | ID of the public subnet | `string` | n/a | yes |
 | public\_subnet\_name | Name of the public subnet | `string` | n/a | yes |
 | resource\_group\_name | Name of resource group into which Databricks will be deployed | `string` | n/a | yes |
-| virtual\_network\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
-| virtual\_network\_rg\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
+| vnet\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
+| vnet\_resource\_group\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
+| workspace\_name | Name of Databricks workspace | `string` | n/a | yes |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 
 ## Outputs
