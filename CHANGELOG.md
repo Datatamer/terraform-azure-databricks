@@ -4,6 +4,8 @@
 * Renames `name` to `workspace_name` for clarity
 * Renames `security-group-name-prefix` to `security_group_name_prefix` for naming consistency
 * Renames `virtual_network_id` to `vnet_id`
+* Renames `virtual_network_rg_name` to `vnet_resource_group_name`
+* Renames `virtual_network_name` to `vnet_name`
 
 # v0.4.2 - September 8th 2020
 * Remove data blocks that attach to subnets during runtime

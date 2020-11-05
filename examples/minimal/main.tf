@@ -21,8 +21,8 @@ module "databricks" {
   resource_group_name = azurerm_resource_group.databricks-rg.name
   location            = azurerm_resource_group.databricks-rg.location
 
-  vnet_id                 = azurerm_virtual_network.databricks-vnet.id
-  virtual_network_rg_name = azurerm_resource_group.databricks-rg.name
+  vnet_id                  = azurerm_virtual_network.databricks-vnet.id
+  vnet_resource_group_name = azurerm_resource_group.databricks-rg.name
 
   private_subnet_name = module.subnets.private_subnet_name
   private_subnet_id   = module.subnets.private_subnet_id
@@ -35,8 +35,8 @@ module "subnets" {
   source             = "../../modules/azure-databricks-subnets/"
   subnet_name_prefix = "tamr-databricks-example"
 
-  virtual_network_name    = azurerm_virtual_network.databricks-vnet.name
-  virtual_network_rg_name = azurerm_resource_group.databricks-rg.name
+  vnet_name                = azurerm_virtual_network.databricks-vnet.name
+  vnet_resource_group_name = azurerm_resource_group.databricks-rg.name
 
   private_subnet_address_prefixes = ["1.2.3.0/26"]
   public_subnet_address_prefixes  = ["1.2.3.64/26"]

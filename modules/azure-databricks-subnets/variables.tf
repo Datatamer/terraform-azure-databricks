@@ -4,12 +4,12 @@ variable "subnet_name_prefix" {
   default     = "tamr-databricks"
 }
 
-variable "virtual_network_name" {
+variable "vnet_name" {
   type        = string
   description = "Name of existing virtual network into which Databricks will be deployed"
 }
 
-variable "virtual_network_rg_name" {
+variable "vnet_resource_group_name" {
   type        = string
   description = "Name of resource group which contains the virtual network"
 }

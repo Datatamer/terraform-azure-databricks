@@ -15,7 +15,7 @@ module "security-groups" {
   source                     = "./modules/azure-databricks-security-groups"
   security_group_name_prefix = var.workspace_name
   location                   = var.location
-  virtual_network_rg_name    = var.virtual_network_rg_name
+  vnet_resource_group_name   = var.vnet_resource_group_name
   private_subnet_id          = var.private_subnet_id
   public_subnet_id           = var.public_subnet_id
   tags                       = var.tags
