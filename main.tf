@@ -4,7 +4,7 @@ module "databricks-workspace" {
   name                = var.workspace_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  virtual_network_id  = var.virtual_network_id
+  vnet_id             = var.vnet_id
   private_subnet_name = var.private_subnet_name
   public_subnet_name  = var.public_subnet_name
   tags                = var.tags

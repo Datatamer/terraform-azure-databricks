@@ -13,7 +13,7 @@ variable "location" {
   description = "Location in which Databricks will be deployed"
 }
 
-variable "virtual_network_id" {
+variable "vnet_id" {
   type        = string
   description = "ID of existing virtual network into which Databricks will be deployed"
 }

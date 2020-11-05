@@ -17,7 +17,7 @@ module "databricks_module" {
   workspace_name = "eg-databricks-workspace"
   resource_group_name = "rg"
   location = "eastus2"
-  virtual_network_id = "vnet"
+  vnet_id = "vnet"
   private_subnet_name = "databricks-private-subnet"
   public_subnet_name = "databricks-public-subnet"
 }
@@ -50,7 +50,7 @@ No requirements.
 | private\_subnet\_name | Name of the private subnet | `string` | n/a | yes |
 | public\_subnet\_name | Name of the public subnet | `string` | n/a | yes |
 | resource\_group\_name | Name of resource group into which Databricks will be deployed | `string` | n/a | yes |
-| virtual\_network\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
+| vnet\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
 | workspace\_name | Name of Databricks workspace | `string` | n/a | yes |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 

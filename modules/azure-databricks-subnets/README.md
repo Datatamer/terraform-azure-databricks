@@ -14,7 +14,7 @@ module "databricks_subnets_module" {
 
   subnet_name_prefix = "databricks-example"
   resource_group_name = "demoGroup"
-  virtual_network_id = "vnet-id"
+  vnet_id = "vnet-id"
   virtual_network_rg_name = "groupName"
   private_subnet_address_prefixes = ["1.2.3.0/26"]
   public_subnet_address_prefixes = ["1.2.3.64/26"]

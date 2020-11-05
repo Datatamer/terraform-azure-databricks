@@ -12,11 +12,10 @@ This terraform module creates security groups for databricks subnets
 main.tf:
 ```
 module "databricks_sg_module" {
-  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-security-groups?ref=0.4.1"
+  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-security-groups?ref=0.5.0"
 
   security_group_name_prefix = "tamr-databricks-"
   location                   = "eastus2"
-  virtual_network_name       = "vnet"
   virtual_network_rg_name    = "rg"
   private_subnet_name        = "databricks-private-subnet"
   public_subnet_name         = "databricks-public-subnet"

@@ -39,8 +39,8 @@ No provider.
 | public\_subnet\_id | ID of the public subnet | `string` | n/a | yes |
 | public\_subnet\_name | Name of the public subnet | `string` | n/a | yes |
 | resource\_group\_name | Name of resource group into which Databricks will be deployed | `string` | n/a | yes |
-| virtual\_network\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
 | virtual\_network\_rg\_name | Name of resource group which contains the virtual network and subnets | `string` | n/a | yes |
+| vnet\_id | ID of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
 | workspace\_name | Name of Databricks workspace | `string` | n/a | yes |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
 
