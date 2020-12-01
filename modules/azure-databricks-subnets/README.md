@@ -10,7 +10,7 @@ This terraform module creates subnets for the Databricks workspace in Azure.
 main.tf:
 ```
 module "databricks_subnets_module" {
-  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-subnets?ref=0.5.0"
+  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-subnets?ref=0.5.1"
 
   subnet_name_prefix = "databricks-example"
   resource_group_name = "demoGroup"
