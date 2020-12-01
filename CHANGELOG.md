@@ -1,5 +1,8 @@
 # Tamr Azure Databricks module
 
+# v0.5.1 - December 1st 2020
+* Updates an outdated reference to `name` in the root module
+
 # v0.5.0 - November 4th 2020
 * Renames `name` to `workspace_name` for clarity
 * Renames `security-group-name-prefix` to `security_group_name_prefix` for naming consistency

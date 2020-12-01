@@ -1,7 +1,7 @@
 // Create the databricks workspace
 module "databricks-workspace" {
   source              = "./modules/azure-databricks-workspace"
-  name                = var.workspace_name
+  workspace_name      = var.workspace_name
   resource_group_name = var.resource_group_name
   location            = var.location
   vnet_id             = var.vnet_id
