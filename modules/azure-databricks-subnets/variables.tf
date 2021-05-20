@@ -37,6 +37,12 @@ variable "service_delegation_actions" {
   EOF
 }
 
+variable "additional_service_endpoints" {
+  type        = list(string)
+  description = "List of additional Virtual Network service endpoints"
+  default     = ["Microsoft.Storage"]
+}
+
 variable "tags" {
   type        = map(string)
   description = "Map of tags to attach to Databricks workspace"

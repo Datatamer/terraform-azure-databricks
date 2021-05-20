@@ -50,6 +50,7 @@ This modules creates:
 | public\_subnet\_address\_prefixes | Address space for public Databricks subnet | `list(string)` | n/a | yes |
 | vnet\_name | Name of existing virtual network into which Databricks will be deployed | `string` | n/a | yes |
 | vnet\_resource\_group\_name | Name of resource group which contains the virtual network | `string` | n/a | yes |
+| additional\_service\_endpoints | List of additional Virtual Network service endpoints | `list(string)` | <pre>[<br>  "Microsoft.Storage"<br>]</pre> | no |
 | service\_delegation\_actions | A list of Actions which should be delegated.<br>  This list is specific to the service to delegate to. | `list(string)` | <pre>[<br>  "Microsoft.Network/virtualNetworks/subnets/join/action",<br>  "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",<br>  "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action"<br>]</pre> | no |
 | subnet\_name\_prefix | Prefix for the names of the resources created by this module | `string` | `"tamr-databricks"` | no |
 | tags | Map of tags to attach to Databricks workspace | `map(string)` | `{}` | no |
