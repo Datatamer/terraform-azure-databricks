@@ -5,10 +5,12 @@ resource "azurerm_subnet" "private-subnet" {
 
   address_prefixes = var.private_subnet_address_prefixes
 
-  service_endpoints = [
-    "Microsoft.AzureActiveDirectory",
-    "Microsoft.Sql",
-  ]
+  service_endpoints = concat(
+    [
+      "Microsoft.AzureActiveDirectory",
+      "Microsoft.Sql",
+    ],
+  var.additional_service_endpoints)
 
   delegation {
     name = "${var.subnet_name_prefix}-private-subnet-delegation"
@@ -27,10 +29,10 @@ resource "azurerm_subnet" "public-subnet" {
 
   address_prefixes = var.public_subnet_address_prefixes
 
-  service_endpoints = [
+  service_endpoints = concat([
     "Microsoft.AzureActiveDirectory",
     "Microsoft.Sql",
-  ]
+  ], var.additional_service_endpoints)
 
   delegation {
     name = "${var.subnet_name_prefix}-public-subnet-delegation"

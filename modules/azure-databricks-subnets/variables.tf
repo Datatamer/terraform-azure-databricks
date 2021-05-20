@@ -37,6 +37,15 @@ variable "service_delegation_actions" {
   EOF
 }
 
+variable "additional_service_endpoints" {
+  type        = list(string)
+  description = <<EOT
+    List of additional Virtual Network service endpoints.
+    NOTE: This module internally adds the `Microsoft.AzureActiveDirectory` and `Microsoft.Sql` endpoints to the created subnets
+  EOT
+  default     = ["Microsoft.Storage"]
+}
+
 variable "tags" {
   type        = map(string)
   description = "Map of tags to attach to Databricks workspace"
