@@ -39,7 +39,10 @@ variable "service_delegation_actions" {
 
 variable "additional_service_endpoints" {
   type        = list(string)
-  description = "List of additional Virtual Network service endpoints"
+  description = <<EOT
+    List of additional Virtual Network service endpoints.
+    NOTE: This module internally adds the `Microsoft.AzureActiveDirectory` and `Microsoft.Sql` endpoints to the created subnets
+  EOT
   default     = ["Microsoft.Storage"]
 }
 
