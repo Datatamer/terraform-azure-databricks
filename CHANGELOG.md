@@ -1,6 +1,6 @@
 # Tamr Azure Databricks module
 
-# v0.7.0 - June 1st 2021
+# v1.0.0 - June 1st 2021
 * Upgrade `azurerm` provider
 
 # v0.6.0 - May 19th 2021
