@@ -24,7 +24,7 @@ This modules creates:
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12 |
-| azurerm | >= 2.11.0 |
+| azurerm | >= 2.60.0 |
 
 ## Providers
 

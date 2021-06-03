@@ -12,7 +12,7 @@ This terraform module creates a Databricks workspace in Azure.
 main.tf:
 ```
 module "databricks_module" {
-  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-workspace?ref=0.6.0"
+  source = "git::https://github.com/Datatamer/terraform-azure-databricks.git//modules/azure-databricks-workspace?ref=x.y.z"
 
   workspace_name = "eg-databricks-workspace"
   resource_group_name = "rg"
@@ -34,13 +34,16 @@ This modules creates:
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+| azurerm | >= 2.60.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
+| azurerm | >= 2.60.0 |
 
 ## Inputs
 

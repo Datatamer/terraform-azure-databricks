@@ -1,5 +1,8 @@
 # Tamr Azure Databricks module
 
+# v1.0.0 - June 1st 2021
+* Upgrade `azurerm` provider
+
 # v0.6.0 - May 19th 2021
 * Add `additional_service_endpoints` variable to `azure-databricks-subnets` submodule
 
